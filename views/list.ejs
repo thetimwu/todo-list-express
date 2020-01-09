@@ -4,13 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/styles.css">
     <title>Document</title>
   </head>
   <body>
-    <% if (kindOfDay === 'weekend') { %>
-    <h1 style="color: red">It's a <%= kindOfDay %> !</h1>
-    <% } else { %>
-    <h1 style="color:green">It's a <%= kindOfDay %> !</h1>
-    <%} %>
+      <div class="box" id="heading">
+             <h1>It's a <%= kindOfDay %> !</h1>
+      </div>
+      <div class="box">
+
+    <% for(let i=0; i<items.length; i++){ %>
+        <div class="item">
+            <input type="checkbox">
+            <p><%=items[i]%></p>
+        </div>
+    <%  } %>
+
+
+    <form class="item" action="/" method="POST">
+      <input type="text" name="newItem" placeholder="New Item" autocomplete="off"/>
+      <button type="submit" name="button">+</button>
+    </form>
+      </div>
+
   </body>
 </html>
